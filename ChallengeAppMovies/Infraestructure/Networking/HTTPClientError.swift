@@ -14,4 +14,5 @@ enum HTTPClientError: Error{
     case parsingError
     case urlError
     case responseError
+    case invalidApiKey
 }

@@ -21,7 +21,7 @@ class APIMovieDataSource: APIMovieDataSourceType{
     func getMovie() async -> Result<MovieResponseResult, HTTPClientError> {
         let endpoint = EndPoint(path: "upcoming?api_key=e14c88f33e2d282127291cd7327701e3", queryParams: [:], method: .get)
         
-        let result = htppClient.makeRequest(endPoint: endpoint, baseUrl: "https://api.themoviedb.org/3/movie/")
+        let result = await htppClient.makeRequest(endPoint: endpoint, baseUrl: "https://api.themoviedb.org/3/movie/")
         
         guard case .success(let data) = result else {
             guard case .failure(let error) = result else{
