@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIMovieDataSourceType{
-    func getMovie() async -> Result<MovieResponseResult, HTTPClientError>
+    func getMovie(page: Int) async -> Result<MovieResponseResult, HTTPClientError>
 }
 
 class APIMovieDataSource: APIMovieDataSourceType{
@@ -18,10 +18,12 @@ class APIMovieDataSource: APIMovieDataSourceType{
         self.htppClient = htppClient
     }
     
-    func getMovie() async -> Result<MovieResponseResult, HTTPClientError> {
-        let endpoint = EndPoint(path: "upcoming?api_key=e14c88f33e2d282127291cd7327701e3", queryParams: [:], method: .get)
+    func getMovie(page: Int) async -> Result<MovieResponseResult, HTTPClientError> {
+        let path = Constants.getMoviesUpcoming + Constants.ByPageURL + String(page) + "&" + Constants.themoviedbAPIKey
+        let baseURL = Constants.baseURL
+        let endpoint = EndPoint(path: path, queryParams: [:], method: .get)
         
-        let result = await htppClient.makeRequest(endPoint: endpoint, baseUrl: "https://api.themoviedb.org/3/movie/")
+        let result = await htppClient.makeRequest(endPoint: endpoint, baseUrl: baseURL)
         
         guard case .success(let data) = result else {
             guard case .failure(let error) = result else{

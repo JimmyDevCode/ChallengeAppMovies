@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let api = APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver()))
         Task{
-            let api = await api.getMovie()
+            let api = await api.getMovie(page: 1)
             print(api)
         }
     }
