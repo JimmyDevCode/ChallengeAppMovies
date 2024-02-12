@@ -11,14 +11,14 @@ class URLSessionErrorResolver{
     func resolve(statusCode: Int) -> HTTPClientError{
         
         guard statusCode == 7 else{
-            return .invalidApiKey
+            return .invalidApiKey(statusCode)
         }
         
         guard statusCode < 500 else {
-            return .clientError
+            return .clientError(statusCode)
         }
         
-        return .serverError
+        return .serverError(statusCode)
     }
     
     func resolve(error: Error) -> HTTPClientError{

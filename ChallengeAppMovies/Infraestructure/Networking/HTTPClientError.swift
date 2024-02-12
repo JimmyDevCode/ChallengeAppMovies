@@ -8,11 +8,11 @@
 import Foundation
 
 enum HTTPClientError: Error{
-    case clientError
-    case serverError
+    case clientError(Int)
+    case serverError(Int)
     case generic
     case parsingError
     case urlError
     case responseError
-    case invalidApiKey
+    case invalidApiKey(Int)
 }
