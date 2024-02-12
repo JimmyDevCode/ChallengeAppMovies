@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AA0D0B82B79C9DE00E90BAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0D0B72B79C9DE00E90BAF /* Constants.swift */; };
 		5AAE58A22B75E3F100EFF8A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE58A12B75E3F100EFF8A4 /* AppDelegate.swift */; };
 		5AAE58A42B75E3F100EFF8A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE58A32B75E3F100EFF8A4 /* SceneDelegate.swift */; };
 		5AAE58A62B75E3F100EFF8A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE58A52B75E3F100EFF8A4 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AA0D0B72B79C9DE00E90BAF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AAE589E2B75E3F100EFF8A4 /* ChallengeAppMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeAppMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAE58A12B75E3F100EFF8A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AAE58A32B75E3F100EFF8A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AA0D0B62B79C9B300E90BAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0D0B72B79C9DE00E90BAF /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5AAE58952B75E3F100EFF8A4 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		5AAE58A02B75E3F100EFF8A4 /* ChallengeAppMovies */ = {
 			isa = PBXGroup;
 			children = (
+				5AA0D0B62B79C9B300E90BAF /* Utils */,
 				5AAE58DC2B75FADE00EFF8A4 /* Infraestructure */,
 				5AAE58D52B75EA2C00EFF8A4 /* Entity */,
 				5AAE58A12B75E3F100EFF8A4 /* AppDelegate.swift */,
@@ -325,6 +336,7 @@
 				5AAE58D72B75F64900EFF8A4 /* MovieResult.swift in Sources */,
 				5AAE58DF2B75FB1900EFF8A4 /* URLSessiónHTTPClient.swift in Sources */,
 				5AAE58AC2B75E3F100EFF8A4 /* ChallengeAppMovies.xcdatamodeld in Sources */,
+				5AA0D0B82B79C9DE00E90BAF /* Constants.swift in Sources */,
 				5AAE58E32B75FC7C00EFF8A4 /* HTTPMethod.swift in Sources */,
 				5AAE58A42B75E3F100EFF8A4 /* SceneDelegate.swift in Sources */,
 			);
