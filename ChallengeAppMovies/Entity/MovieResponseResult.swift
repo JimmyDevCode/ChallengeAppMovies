@@ -18,7 +18,7 @@ struct MovieResponseResult: Codable {
     enum CodingKeys: String, CodingKey {
         case dates = "dates"
         case page
-        case results = "result"
+        case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }

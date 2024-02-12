@@ -32,7 +32,7 @@ class APIMovieDataSource: APIMovieDataSourceType{
         guard let movieList = try? JSONDecoder().decode(MovieResponseResult.self, from: data) else {
             return .failure(.parsingError)
         }
-        
+        print("RESPONSE: -> ", movieList)
         return .success(movieList)
     }
     

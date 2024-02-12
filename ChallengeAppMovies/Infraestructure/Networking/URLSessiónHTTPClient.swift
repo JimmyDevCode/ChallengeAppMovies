@@ -14,7 +14,7 @@ protocol HTTPClient{
 class URLSessionRequestMaker{
     
     func url(endpoint: EndPoint, baseURL: String) -> URL? {
-        var urlComponents = URLComponents(string: baseURL + endpoint.path)
+        let urlComponents = URLComponents(string: baseURL + endpoint.path)
         let url = urlComponents?.url
         return url
     }
