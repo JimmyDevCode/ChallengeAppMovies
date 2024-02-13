@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeViewType: AnyObject {
+    
+    func updateDataMovies(movies: [MovieResponse])
+}
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -15,9 +19,14 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    var presenter: HomePresenterInputType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
+        
+        presenter?.getMovies(page: 1)
         let repository = MovieRepository(apiDataSource: APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver())), errorMapper: MovieDomainErrorMapper())
         
         Task{
@@ -33,6 +42,7 @@ class ViewController: UIViewController {
                 print(listMovies)
             }
         }
+        
     }
 }
 
@@ -61,6 +71,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let movie = listMovies[indexPath.row]
         viewDetail.movie = movie
         navigationController?.pushViewController(viewDetail, animated: true)
+        ///navegamos a la vista detalle
+        presenter?.selectMovie(movie)
     }
 }
 
@@ -69,5 +81,11 @@ extension ViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CustomTableViewCellMovie.nib(), forCellReuseIdentifier: CustomTableViewCellMovie.identifier)
+    }
+}
+
+extension ViewController: HomeViewType{
+    func updateDataMovies(movies: [MovieResponse]) {
+        listMovies = movies
     }
 }
