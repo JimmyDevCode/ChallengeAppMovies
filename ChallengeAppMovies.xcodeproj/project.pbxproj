@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A58F0852B7A7EAE00789830 /* CustomTableViewCellMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F0832B7A7EAE00789830 /* CustomTableViewCellMovie.swift */; };
 		5A58F0862B7A7EAE00789830 /* CustomTableViewCellMovie.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A58F0842B7A7EAE00789830 /* CustomTableViewCellMovie.xib */; };
+		5A58F0892B7B2F1800789830 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58F0882B7B2F1800789830 /* MovieResponse.swift */; };
 		5AA0D0B82B79C9DE00E90BAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0D0B72B79C9DE00E90BAF /* Constants.swift */; };
 		5AA0D0BC2B79DD8400E90BAF /* MovieRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0D0BB2B79DD8400E90BAF /* MovieRepositories.swift */; };
 		5AA0D0BF2B79E37A00E90BAF /* Extensions+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0D0BE2B79E37A00E90BAF /* Extensions+Result.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		5A58F0832B7A7EAE00789830 /* CustomTableViewCellMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellMovie.swift; sourceTree = "<group>"; };
 		5A58F0842B7A7EAE00789830 /* CustomTableViewCellMovie.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellMovie.xib; sourceTree = "<group>"; };
+		5A58F0882B7B2F1800789830 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		5AA0D0B72B79C9DE00E90BAF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AA0D0BB2B79DD8400E90BAF /* MovieRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositories.swift; sourceTree = "<group>"; };
 		5AA0D0BE2B79E37A00E90BAF /* Extensions+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Result.swift"; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5A58F0872B7B2EE200789830 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F0882B7B2F1800789830 /* MovieResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		5AA0D0B62B79C9B300E90BAF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		5AA0D0B92B79DB2D00E90BAF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5A58F0872B7B2EE200789830 /* Response */,
 				5AA0D0BA2B79DB3500E90BAF /* Repositories */,
 			);
 			path = Data;
@@ -371,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A58F0852B7A7EAE00789830 /* CustomTableViewCellMovie.swift in Sources */,
+				5A58F0892B7B2F1800789830 /* MovieResponse.swift in Sources */,
 				5AAE58E72B75FE3800EFF8A4 /* APIMovieDataSource.swift in Sources */,
 				5AAE58DB2B75F83800EFF8A4 /* MovieDate.swift in Sources */,
 				5AAE58E52B75FCF600EFF8A4 /* HTTPClientError.swift in Sources */,

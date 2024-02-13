@@ -13,4 +13,5 @@ class Constants{
     static let getMoviesUpcoming = "/upcoming"
     static let ByPageURL = "?page="
     static let themoviedbAPIKey = "api_key=e14c88f33e2d282127291cd7327701e3"
+    static let baseImageURL = "https://image.tmdb.org/t/p/w500"
 }

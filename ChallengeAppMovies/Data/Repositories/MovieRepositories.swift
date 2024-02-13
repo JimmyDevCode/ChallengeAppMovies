@@ -11,7 +11,7 @@ enum MovieDomainError: Error {
 }
 
 protocol MovieRepositoryType {
-    func getMovie(page: Int) async -> Result<MovieResponseResult, MovieDomainError>
+    func getMovie(page: Int) async -> Result<[MovieResponse], MovieDomainError>
 }
 
 class MovieRepository: MovieRepositoryType{
@@ -24,15 +24,19 @@ class MovieRepository: MovieRepositoryType{
         self.errorMapper = errorMapper
     }
     
-    func getMovie(page: Int) async -> Result<MovieResponseResult, MovieDomainError> {
+    func getMovie(page: Int) async -> Result<[MovieResponse], MovieDomainError> {
         
         let movieListResult = await apiDataSource.getMovie(page: page)
+        
         
         guard case .success(let movieList) = movieListResult else {
             return .failure(errorMapper.map(error: movieListResult.failureValue as? HTTPClientError))
         }
-
-        return .success(movieList)
+        let movieResponse = movieList.results.map{movie in
+            let posterPath = Constants.baseImageURL + movie.posterPath
+            return MovieResponse(domainModel: movie, posterPath: posterPath)
+        }
+        return .success(movieResponse)
     }
 }
 

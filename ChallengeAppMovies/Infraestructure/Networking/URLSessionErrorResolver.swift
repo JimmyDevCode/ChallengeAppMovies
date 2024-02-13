@@ -18,6 +18,10 @@ class URLSessionErrorResolver{
             return .clientError(statusCode)
         }
         
+        guard statusCode == 404 else{
+            return .notFound(statusCode)
+        }
+        
         return .serverError(statusCode)
     }
     

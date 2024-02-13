@@ -15,4 +15,5 @@ enum HTTPClientError: Error{
     case urlError
     case responseError
     case invalidApiKey(Int)
+    case notFound(Int)
 }
