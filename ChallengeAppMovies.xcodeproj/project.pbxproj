@@ -114,9 +114,6 @@
 		5A58F0802B7A76D100789830 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5AAE58A52B75E3F100EFF8A4 /* ViewController.swift */,
-				5A58F0832B7A7EAE00789830 /* CustomTableViewCellMovie.swift */,
-				5A58F0842B7A7EAE00789830 /* CustomTableViewCellMovie.xib */,
 				5ADD66FD2B7BAA020002E488 /* ViewDetailViewController.swift */,
 			);
 			path = View;
@@ -255,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				5ADD67002B7BAEB60002E488 /* VIPER */,
-				5A58F0802B7A76D100789830 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -263,10 +259,7 @@
 		5ADD67002B7BAEB60002E488 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				5ADD67032B7BAEFA0002E488 /* Router */,
-				5ADD67022B7BAEF40002E488 /* Presenter */,
-				5ADD67012B7BAEE90002E488 /* Interactor */,
-				5AAE58D52B75EA2C00EFF8A4 /* Entity */,
+				5ADD67042B7BAF4E0002E488 /* Modules */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -290,6 +283,45 @@
 			children = (
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		5ADD67042B7BAF4E0002E488 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5ADD67072B7BAFA60002E488 /* Detail */,
+				5ADD67052B7BAF570002E488 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5ADD67052B7BAF570002E488 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5ADD67062B7BAF890002E488 /* View */,
+				5AAE58D52B75EA2C00EFF8A4 /* Entity */,
+				5ADD67012B7BAEE90002E488 /* Interactor */,
+				5ADD67022B7BAEF40002E488 /* Presenter */,
+				5ADD67032B7BAEFA0002E488 /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5ADD67062B7BAF890002E488 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F0842B7A7EAE00789830 /* CustomTableViewCellMovie.xib */,
+				5A58F0832B7A7EAE00789830 /* CustomTableViewCellMovie.swift */,
+				5AAE58A52B75E3F100EFF8A4 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ADD67072B7BAFA60002E488 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5A58F0802B7A76D100789830 /* View */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
