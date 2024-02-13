@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var listMovies: [moviePresentableItem] = []{
+    private var listMovies: [MovieResponse] = []{
         didSet{
             tableView.reloadData()
         }
@@ -24,21 +24,19 @@ class ViewController: UIViewController {
         tableView.register(CustomTableViewCellMovie.nib(), forCellReuseIdentifier: CustomTableViewCellMovie.identifier)
         
         
-        let api = APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver()))
+        let repository = MovieRepository(apiDataSource: APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver())), errorMapper: MovieDomainErrorMapper())
         
         Task{
-            let result = await api.getMovie(page: 1)
+            let result = await repository.getMovie(page: 1)
             let movieResponse = try? result.get()
-            print(api)
+            print(result)
             Task{@MainActor in
                 guard let movieResponse = movieResponse else{
                     return
                 }
-                let presetableItems = movieResponse.results.map{movie in
-                    return moviePresentableItem(domainModel: movie)
-                }
                 
-                self.listMovies = presetableItems
+                self.listMovies = movieResponse
+                print(listMovies)
             }
         }
     }

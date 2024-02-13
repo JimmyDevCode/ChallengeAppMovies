@@ -23,25 +23,9 @@ class CustomTableViewCellMovie: UITableViewCell {
         selectionStyle = .none
     }
     
-    func setup(movie: moviePresentableItem) {
+    func setup(movie: MovieResponse) {
         nameMovieLabel.text = movie.name
-        genreMovieLabel.text = movie.genre
+        genreMovieLabel.text = movie.releaseDate
     }
     
-}
-
-struct moviePresentableItem{
-    let name: String
-    let genre: String
-    let rating: String
-    let releaseDate: String
-    let summary: String
-    
-    init(domainModel: MovieResult) {
-        self.name = domainModel.originalTitle
-        self.genre = domainModel.originalLanguage
-        self.rating = domainModel.originalTitle
-        self.releaseDate = domainModel.originalTitle
-        self.summary = domainModel.originalTitle
-    }
 }
