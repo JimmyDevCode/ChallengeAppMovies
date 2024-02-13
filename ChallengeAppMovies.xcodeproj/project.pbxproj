@@ -114,6 +114,7 @@
 		5A58F0802B7A76D100789830 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5AAE58A52B75E3F100EFF8A4 /* ViewController.swift */,
 				5A58F0832B7A7EAE00789830 /* CustomTableViewCellMovie.swift */,
 				5A58F0842B7A7EAE00789830 /* CustomTableViewCellMovie.xib */,
 				5ADD66FD2B7BAA020002E488 /* ViewDetailViewController.swift */,
@@ -186,14 +187,12 @@
 		5AAE58A02B75E3F100EFF8A4 /* ChallengeAppMovies */ = {
 			isa = PBXGroup;
 			children = (
-				5A58F0802B7A76D100789830 /* View */,
+				5ADD66FF2B7BAE960002E488 /* Presentation */,
 				5AA0D0B92B79DB2D00E90BAF /* Data */,
 				5AA0D0B62B79C9B300E90BAF /* Utils */,
 				5AAE58DC2B75FADE00EFF8A4 /* Infraestructure */,
-				5AAE58D52B75EA2C00EFF8A4 /* Entity */,
 				5AAE58A12B75E3F100EFF8A4 /* AppDelegate.swift */,
 				5AAE58A32B75E3F100EFF8A4 /* SceneDelegate.swift */,
-				5AAE58A52B75E3F100EFF8A4 /* ViewController.swift */,
 				5AAE58A72B75E3F100EFF8A4 /* Main.storyboard */,
 				5AAE58AD2B75E3F400EFF8A4 /* Assets.xcassets */,
 				5AAE58AF2B75E3F400EFF8A4 /* LaunchScreen.storyboard */,
@@ -250,6 +249,47 @@
 				5AF131F02B768F4B0032ACF8 /* URLSessionErrorResolver.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5ADD66FF2B7BAE960002E488 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5ADD67002B7BAEB60002E488 /* VIPER */,
+				5A58F0802B7A76D100789830 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5ADD67002B7BAEB60002E488 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				5ADD67032B7BAEFA0002E488 /* Router */,
+				5ADD67022B7BAEF40002E488 /* Presenter */,
+				5ADD67012B7BAEE90002E488 /* Interactor */,
+				5AAE58D52B75EA2C00EFF8A4 /* Entity */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		5ADD67012B7BAEE90002E488 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5ADD67022B7BAEF40002E488 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5ADD67032B7BAEFA0002E488 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
