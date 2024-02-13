@@ -17,13 +17,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(CustomTableViewCellMovie.nib(), forCellReuseIdentifier: CustomTableViewCellMovie.identifier)
-        
-        
+        setupTableView()
         let repository = MovieRepository(apiDataSource: APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver())), errorMapper: MovieDomainErrorMapper())
         
         Task{
@@ -58,5 +52,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell.setup(movie: movie)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewDetail = storyBoard.instantiateViewController(withIdentifier: "ViewDetail") as! ViewDetailViewController
+        viewDetail.title = listMovies[indexPath.row].name
+        let movie = listMovies[indexPath.row]
+        viewDetail.movie = movie
+        navigationController?.pushViewController(viewDetail, animated: true)
+    }
+}
+
+extension ViewController{
+    func setupTableView(){
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CustomTableViewCellMovie.nib(), forCellReuseIdentifier: CustomTableViewCellMovie.identifier)
     }
 }
