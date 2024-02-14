@@ -19,6 +19,6 @@ struct MovieResponse{
         self.name = domainModel.originalTitle
         self.rating = domainModel.voteAverage
         self.releaseDate = domainModel.releaseDate
-        self.summary = domainModel.originalTitle
+        self.summary = domainModel.overview
     }
 }
