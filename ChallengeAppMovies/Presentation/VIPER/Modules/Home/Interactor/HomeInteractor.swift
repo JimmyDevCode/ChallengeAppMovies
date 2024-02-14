@@ -34,6 +34,7 @@ extension HomeInteractor: HomeInteractorInputType{
                 }
                 print(movieResponse)
                 self.movies = movieResponse
+                presenter?.getDogsResponse(movies: self.movies )
             }
         }
     }
