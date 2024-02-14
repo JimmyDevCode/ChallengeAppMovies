@@ -24,25 +24,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        
-        
+        HomeConfigurator.createModuleHome(view: self)
         presenter?.getMovies(page: 1)
-        let repository = MovieRepository(apiDataSource: APIMovieDataSource(htppClient: URLSessiónHTTPClient(requestMaker: URLSessionRequestMaker(), errorResolver: URLSessionErrorResolver())), errorMapper: MovieDomainErrorMapper())
-        
-        Task{
-            let result = await repository.getMovie(page: 1)
-            let movieResponse = try? result.get()
-            print(result)
-            Task{@MainActor in
-                guard let movieResponse = movieResponse else{
-                    return
-                }
-                
-                self.listMovies = movieResponse
-                print(listMovies)
-            }
-        }
-        
     }
 }
 

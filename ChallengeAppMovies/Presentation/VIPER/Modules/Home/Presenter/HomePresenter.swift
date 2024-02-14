@@ -33,11 +33,10 @@ class HomePresenter: HomePresenterType{
     }
     
     func selectMovie(_ movie: MovieResponse) {
-       //
+       //TODO: Seleccion para de una movie
     }
 
     func getDogsResponse(movies: [MovieResponse]) {
-        //TODO:
-        //self.view?.updateDataDogs(movies: movies)
+        self.view?.updateDataMovies(movies: movies)
     }
 }
