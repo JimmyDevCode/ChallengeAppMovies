@@ -14,8 +14,7 @@ class HomeDetailConfigurator{
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "ViewDetail") as! ViewDetailViewController
-        let presenter =  HomeDetailPresenter(dogDetail: dog, view: view)
-       
+        let presenter =  HomeDetailPresenter(movieDetail: movie, view: view)
         view.presenter = presenter
         return view
     }

@@ -48,14 +48,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let viewDetail = storyBoard.instantiateViewController(withIdentifier: "ViewDetail") as! ViewDetailViewController
-        viewDetail.title = listMovies[indexPath.row].name
         let movie = listMovies[indexPath.row]
-        viewDetail.movie = movie
-        navigationController?.pushViewController(viewDetail, animated: true)
-        ///navegamos a la vista detalle
-        presenter?.selectMovie(movie)
+        presenter?.selectMovie(movie: movie)
     }
 }
 

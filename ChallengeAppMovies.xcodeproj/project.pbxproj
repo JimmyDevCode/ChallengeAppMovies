@@ -38,6 +38,9 @@
 		5ADD670F2B7BB9C40002E488 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5ADD670E2B7BB9C40002E488 /* SDWebImage */; };
 		5ADD67112B7BD56B0002E488 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD67102B7BD56B0002E488 /* HomeConfigurator.swift */; };
 		5AF131F12B768F4B0032ACF8 /* URLSessionErrorResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF131F02B768F4B0032ACF8 /* URLSessionErrorResolver.swift */; };
+		5AF33E332B86A74700E6533F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF33E322B86A74700E6533F /* HomeRouter.swift */; };
+		5AF33E372B86A81800E6533F /* HomeDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF33E362B86A81800E6533F /* HomeDetailConfigurator.swift */; };
+		5AF33E3A2B86A8F600E6533F /* HomeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF33E392B86A8F600E6533F /* HomeDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		5ADD670A2B7BB53D0002E488 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		5ADD67102B7BD56B0002E488 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		5AF131F02B768F4B0032ACF8 /* URLSessionErrorResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionErrorResolver.swift; sourceTree = "<group>"; };
+		5AF33E322B86A74700E6533F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		5AF33E362B86A81800E6533F /* HomeDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailConfigurator.swift; sourceTree = "<group>"; };
+		5AF33E392B86A8F600E6533F /* HomeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +299,7 @@
 		5ADD67032B7BAEFA0002E488 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				5AF33E322B86A74700E6533F /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -332,6 +339,8 @@
 		5ADD67072B7BAFA60002E488 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5AF33E382B86A8B800E6533F /* Presenter */,
+				5AF33E352B86A7F500E6533F /* Configurator */,
 				5A58F0802B7A76D100789830 /* View */,
 			);
 			path = Detail;
@@ -344,6 +353,22 @@
 				5A822C492B7C884C00242B3B /* HomeConcreteConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5AF33E352B86A7F500E6533F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5AF33E362B86A81800E6533F /* HomeDetailConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5AF33E382B86A8B800E6533F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5AF33E392B86A8F600E6533F /* HomeDetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,11 +517,14 @@
 				5AAE58DB2B75F83800EFF8A4 /* MovieDate.swift in Sources */,
 				5AAE58E52B75FCF600EFF8A4 /* HTTPClientError.swift in Sources */,
 				5ADD670B2B7BB53D0002E488 /* HomeInteractor.swift in Sources */,
+				5AF33E3A2B86A8F600E6533F /* HomeDetailPresenter.swift in Sources */,
 				5ADD67112B7BD56B0002E488 /* HomeConfigurator.swift in Sources */,
 				5AF131F12B768F4B0032ACF8 /* URLSessionErrorResolver.swift in Sources */,
 				5AAE58D92B75F77100EFF8A4 /* MovieResponseResult.swift in Sources */,
 				5AAE58A62B75E3F100EFF8A4 /* ViewController.swift in Sources */,
+				5AF33E372B86A81800E6533F /* HomeDetailConfigurator.swift in Sources */,
 				5ADD66FE2B7BAA020002E488 /* ViewDetailViewController.swift in Sources */,
+				5AF33E332B86A74700E6533F /* HomeRouter.swift in Sources */,
 				5AAE58E12B75FC5500EFF8A4 /* EndPoint.swift in Sources */,
 				5AAE58A22B75E3F100EFF8A4 /* AppDelegate.swift in Sources */,
 				5AA0D0BC2B79DD8400E90BAF /* MovieRepositories.swift in Sources */,
