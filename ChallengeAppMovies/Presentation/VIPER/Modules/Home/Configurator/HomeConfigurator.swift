@@ -13,8 +13,9 @@ class HomeConfigurator {
         let build: HomeConfiguratorType
         let buildConfig = HomeConcreteConfigurator()
         build = buildConfig
-        let repository = build.createRepository()
+        var repository = build.createRepository()
         var presenter = build.createPresenter()
+        var router = build.createRouter()
         let interactor = build.createInteractor(repository: repository, presenter: presenter)
         presenter.router = router
         presenter.interactor = interactor
