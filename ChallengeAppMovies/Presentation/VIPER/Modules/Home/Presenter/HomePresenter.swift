@@ -9,9 +9,10 @@ import Foundation
 
 protocol HomePresenterInputType{
     func getMovies(page: Int)
-    func selectMovie(_ movie: MovieResponse)
-    var interactor: HomeInteractorInputType? {get set}
-    //var router: HomeRouterType? {get set}
+    func selectMovie(movie: MovieResponse)
+    
+    var  interactor: HomeInteractorInputType? {get set}
+    var router: HomeRouterType? {get set}
 }
 
 protocol HomePresenterOuputType: AnyObject {
@@ -24,16 +25,17 @@ protocol HomePresenterOuputType: AnyObject {
 protocol HomePresenterType: HomePresenterInputType, HomePresenterOuputType {}
 
 class HomePresenter: HomePresenterType{
-    
+
     var interactor: HomeInteractorInputType?
     var view: HomeViewType?
+    var router: HomeRouterType?
     
     func getMovies(page: Int) {
         interactor?.getMovies(page: page)
     }
     
-    func selectMovie(_ movie: MovieResponse) {
-       //TODO: Seleccion para de una movie
+    func selectMovie(movie: MovieResponse) {
+        router?.navigateToHomeDetail(movie: movie)
     }
 
     func getDogsResponse(movies: [MovieResponse]) {

@@ -8,6 +8,11 @@
 import UIKit
 import SDWebImage
 
+protocol HomeViewDetailType: AnyObject{
+    
+    func updateDetailMovie(movie: MovieResponse)
+}
+
 class ViewDetailViewController: UIViewController {
 
 
@@ -18,20 +23,19 @@ class ViewDetailViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     
     var movie: MovieResponse?
+    var presenter: HomeDetailPresenterType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let movie = movie {
-            setup(movie: movie)
-        }
+        presenter?.getDetail()
     }
 
     func setup(movie: MovieResponse) {
         
         if let imageURL = URL(string: movie.poster){
-            posterImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"))
+            posterImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Placeholder_view_vector.svg"))
         }else {
-            posterImageView.image = UIImage(named: "placeholder")
+            posterImageView.image = UIImage(named: "Placeholder_view_vector.svg")
             
         }
         
@@ -43,4 +47,11 @@ class ViewDetailViewController: UIViewController {
     
     
     
+}
+
+extension ViewDetailViewController: HomeViewDetailType{
+    func updateDetailMovie(movie: MovieResponse) {
+        self.movie = movie
+        setup(movie: movie)
+    }
 }
