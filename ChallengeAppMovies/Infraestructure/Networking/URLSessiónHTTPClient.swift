@@ -14,9 +14,16 @@ protocol HTTPClient{
 class URLSessionRequestMaker{
     
     func url(endpoint: EndPoint, baseURL: String) -> URL? {
-        let urlComponents = URLComponents(string: baseURL + endpoint.path)
-        let url = urlComponents?.url
-        return url
+        let urlString = baseURL + endpoint.path
+        if !endpoint.queryParams.isEmpty {
+            var urlComponents = URLComponents(string: urlString)
+            let urlQueryParameters = endpoint.queryParams.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+            urlComponents?.queryItems = urlQueryParameters
+            
+            return urlComponents?.url
+        } else {
+            return URL(string: urlString)
+        }
     }
 }
 
@@ -38,6 +45,8 @@ class URLSessiónHTTPClient: HTTPClient{
             return .failure(.urlError)
         }
         do {
+            //var request = URLRequest(url: url)
+            //request.httpMethod = endPoint.method.rawValue
             let result = try await session.data(from: url)
             
             guard let response = result.1 as? HTTPURLResponse else {
