@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewType: AnyObject {
     
     func updateDataMovies(movies: [MovieResponse])
+    func updateDataMoviesFiltered(movies: [MovieResponse])
 }
 class ViewController: UIViewController {
     
@@ -62,7 +63,18 @@ extension ViewController{
 }
 
 extension ViewController: HomeViewType{
+    func updateDataMoviesFiltered(movies: [MovieResponse]) {
+        listMovies = movies
+    }
+    
     func updateDataMovies(movies: [MovieResponse]) {
         listMovies = movies
+    }
+}
+
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Jimmy Mac")
+        presenter?.searchMovie(name: searchText)
     }
 }
