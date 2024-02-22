@@ -34,5 +34,4 @@ class HomeConcreteConfigurator: HomeConfiguratorType{
     func createRouter() -> HomeRouterType {
         return HomeRouter()
     }
-    
 }
